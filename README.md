@@ -1,9 +1,9 @@
 # Build Up: Python for Little Geniuses
 
-A book that teaches **Python programming** to 11-year-olds, using math
-problems as the fun, concrete hook for each coding idea — not a math book
-with code stapled on. Along the way you build **Build Up**, your own
-simplified, 2D, Minecraft-like sandbox game, one small piece at a time.
+**Build Up: Python for Little Geniuses** teaches **Python programming** to
+11-year-olds, using math problems as the fun, concrete hook for each coding
+idea — not a math book with code stapled on. Along the way you build your
+own simplified, 2D, Minecraft-like sandbox game, one small piece at a time.
 
 **New here? Start in Google Colab — no install, no setup, just click and
 run:**
