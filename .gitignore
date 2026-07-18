@@ -28,6 +28,7 @@ venv/
 *.vrb
 build/pdf/
 build/*.pdf
+build/pdf-history/*.pdf
 
 # OS cruft
 .DS_Store

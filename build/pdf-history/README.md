@@ -8,6 +8,8 @@ Built PDFs archived here, one per notable milestone — same pattern as
 - `local-wip<N>-<short-description>.pdf` for an untagged, work-in-progress
   snapshot worth keeping around (e.g. before/after a layout change)
 
-Unlike `build/pdf/` (the ephemeral `latexmk` output directory, gitignored),
-this folder is tracked in git on purpose — it's a deliberate historical
-record, not a build artifact.
+**Local only, not tracked in git** — the PDFs here are gitignored (unlike
+`lean4-learning`'s `pdf-history/`, which does commit them). This folder and
+its naming convention are still worth keeping for your own local reference;
+just don't expect these files to show up for anyone else who clones the
+repo.
