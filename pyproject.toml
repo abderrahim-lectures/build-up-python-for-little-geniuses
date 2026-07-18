@@ -1,0 +1,21 @@
+[project]
+name = "build-up"
+version = "0.0.1"
+description = "Code project for 'Build Up: Python for Little Geniuses' -- every Track A and Track B code example in the book, pytest-verified."
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+game = [
+    "pgzero>=1.2.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["code_project/tests"]
+pythonpath = ["."]
+
+[dependency-groups]
+dev = [
+    "matplotlib>=3.10.9",
+    "pillow>=12.3.0",
+    "pytest>=9.1.1",
+]
