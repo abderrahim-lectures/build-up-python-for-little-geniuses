@@ -8,12 +8,12 @@ own simplified, 2D, Minecraft-like sandbox game, one small piece at a time.
 **New here? Start in Google Colab — no install, no setup, just click and
 run:**
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/abderrahim-lectures/build-up/blob/master/notebooks/ch00_welcome.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/abderrahim-lectures/build-up-python-for-little-geniuses/blob/master/notebooks/ch00_welcome.ipynb)
 
 Prefer a full browser coding environment instead? Open the **Little Genius
 Zone**:
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/abderrahim-lectures/build-up)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/abderrahim-lectures/build-up-python-for-little-geniuses)
 
 Want the finished, illustrated PDF? *(Download PDF badge — coming soon,
 once the book has enough chapters to ship a first release.)*
@@ -46,7 +46,8 @@ the full disclosure.
   every code block in the book.
 - `book/` — the book's `.tex` source, chapter by chapter.
 - `build/` — the LaTeX build tooling (`build-up.tex` is the top-level
-  driver).
+  driver — filenames stay short slugs; only the display title is the full
+  name).
 - `assets/` — vendored CC0 art ([Kenney.nl](https://kenney.nl/assets)) and
   the scripts that generate this book's diagrams and pixel art.
 
