@@ -13,6 +13,12 @@ chapter's `pgzero` game code is run and played by hand before it ships, but
 that is a meaningfully weaker guarantee than actual human expert sign-off on
 pedagogical soundness, age-appropriateness, or correctness.
 
+**Cover art.** `book/00-welcome/images/cover.png` was generated and designed
+in Canva (AI-assisted generation, then hand-edited for correct title text
+and layout), not hand-drawn or code-generated — everything else illustrated
+in this book (diagrams, pixel-art badges) is procedurally generated instead,
+see `assets/`.
+
 **Language target.** The whole book is written toward a plain-English target
 (roughly Flesch-Kincaid grade 5-6), deliberately avoiding idioms and
 culturally specific references, since a meaningful share of readers are
