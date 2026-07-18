@@ -8,13 +8,15 @@ simplified, 2D, Minecraft-like sandbox game, one small piece at a time.
 **New here? Start in Google Colab — no install, no setup, just click and
 run:**
 
-- Chapter 0: *(Colab badge — coming soon)*
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/abderrahim-lectures/build-up/blob/master/notebooks/ch00_welcome.ipynb)
 
 Prefer a full browser coding environment instead? Open the **Little Genius
-Zone** (GitHub Codespaces) — also no install needed.
+Zone**:
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/abderrahim-lectures/build-up)
 
 Want the finished, illustrated PDF? *(Download PDF badge — coming soon,
-once `build-up.tex` compiles cleanly.)*
+once the book has enough chapters to ship a first release.)*
 
 ## What's inside
 
