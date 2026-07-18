@@ -30,9 +30,15 @@ build/pdf/
 build/*.pdf
 build/pdf-history/*.pdf
 
+# Node
+node_modules/
+_site/
+*.log
+
 # OS cruft
 .DS_Store
 Thumbs.db
 
 # Local-only files
 REPRODUCING.md
+web/screenshot*.png

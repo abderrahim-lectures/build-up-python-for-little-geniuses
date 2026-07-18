@@ -5,11 +5,18 @@ released under [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 (public domain — no attribution legally required, credited here anyway
 because Kenney's work makes this book's whole visual design possible).
 
-No packs are vendored yet. As chapters are written, each pack used gets a
-line here: pack name, version/date downloaded, and which chapter(s) use it.
+## Packs vendored
 
-Scope (see the plan this book was built from): flat top-down/pixel packs for
-Track B's actual game tiles, plus pixel UI and 1-bit packs for icons and
-badges. Any isometric-block pack is decorative only (e.g. a cover graphic),
-never used for the game world itself -- this book's `pgzero` game stays 2D
-top-down throughout.
+- **Game Icons** (`game-icons/`) — 105 monochrome game UI icons. Used for the
+  small icon badges on each recurring box type (`target` for objectives,
+  `question` for the Socratic box, `gear` for concepts, `wrench` for the
+  build box, `checkmark` for knowledge checks, `star`/`trophy` for the
+  retrieval challenge) in `web/src/images/icons/`.
+- **RPG Urban Pack** (`rpg-urban-pack/`) — 480 16x16 pixel-art tiles for
+  city/urban RPG scenes. Vendored for future Track B world-tile use (see the
+  plan this book was built from — Track B stays 2D top-down).
+
+Scope: flat top-down/pixel packs for Track B's actual game tiles, plus icon
+and UI packs for badges. Any isometric-block pack is decorative only (e.g. a
+cover graphic), never used for the game world itself — this book's `pgzero`
+game stays 2D top-down throughout.
