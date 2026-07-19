@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "clean": "node -e \"require('fs').rmSync('_site', {recursive: true, force: true})\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
