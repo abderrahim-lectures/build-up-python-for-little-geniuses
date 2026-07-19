@@ -1,0 +1,96 @@
+---
+title: "Chapter 15: Capstone"
+layout: base.njk
+---
+{% from "chapter-band.njk" import render as chapterBand %}
+{{ chapterBand(15, "Capstone", "capstone") }}
+
+<p>Every math unit ends with a review that mixes every skill you've learned – this chapter does the same for everything you've built.</p>
+
+<div class="box box-objectives">
+  <div class="icon-badge"><img src="/images/icons/trophy.png" alt=""></div>
+  <div class="box-title">By the end of this chapter, you can...</div>
+  <div class="box-body">
+    <ul>
+      <li>Combine variables, functions, and classes in one program</li>
+      <li>Explain how this chapter's code connects back to Chapters 1-14</li>
+      <li>Describe one thing you'd add next to your game</li>
+    </ul>
+  </div>
+</div>
+
+<h2>15.1 Putting it all together</h2>
+<p>Your game world now has players (Ch.1, Ch.13), math-driven movement and land plots (Ch.2, Ch.9, Ch.10), an inventory and shop (Ch.5, Ch.11), loops that draw and run everything (Ch.6, Ch.7), choices and randomness (Ch.4, Ch.12), and tests that check it all still works (Ch.14). The code below shows all of it working together in one small scene.</p>
+<p><strong>Worked example:</strong> <code>build_summary("Ari", ["sword", "shield"], {"potion": 5, "map": 12})</code> pulls together three chapters at once: <code>", ".join(inventory)</code> (a list, Ch.5) becomes "sword, shield"; <code>min(prices.values())</code> (a dictionary, Ch.11) finds the cheapest price, 5; and the f-string (Ch.3) weaves both into one sentence – "Ari is carrying: sword, shield. Cheapest shop item: 5 coins." Every earlier chapter is still doing real work here, just combined.</p>
+
+<p>Run this chapter's notebook right here on the page, powered by MyBinder.</p>
+
+<button id="binder-btn-ch15_capstone" class="binder-btn" onclick="
+  this.style.display='none';
+  document.getElementById('binder-loading-ch15_capstone').style.display='flex';
+  var f = document.getElementById('binder-frame-ch15_capstone');
+  f.addEventListener('load', function () {
+    document.getElementById('binder-loading-ch15_capstone').style.display='none';
+    f.style.display='block';
+  });
+  f.src = f.dataset.src;
+">
+  <img src="/images/icons/play.png" alt="">
+  Run this chapter's notebook
+</button>
+
+<div id="binder-loading-ch15_capstone" class="binder-loading" style="display:none">
+  <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
+  <img class="mascot" src="/images/mascot-waiting.png" alt="">
+  <div>
+    <div class="status-text">Launching your Jupyter session&hellip;</div>
+    <div class="dots"><span></span><span></span><span></span></div>
+  </div>
+</div>
+<div class="binder-frame-wrap">
+  <div class="icon-badge"><img src="/images/icons/play.png" alt=""></div>
+  <iframe id="binder-frame-ch15_capstone" class="binder-frame" style="display:none" data-src="https://mybinder.org/v2/gh/abderrahim-lectures/build-up-python-for-little-geniuses/master?filepath=notebooks/ch15_capstone.ipynb"
+    title="Chapter 15 notebook, running live via MyBinder"></iframe>
+</div>
+<p class="binder-note">&#128205; First launch can take 1–5 minutes while MyBinder builds your Python environment.</p>
+
+<div class="box box-code">
+  <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
+  <div class="box-title">capstone.py</div>
+  <div class="box-body">class Player:
+    def __init__(self, name, health):
+        self.name = name
+        self.health = health
+
+hero = Player("Ari", 100)
+inventory = ["sword"]
+prices = {"potion": 5}
+
+for item in inventory:
+    print(f"{hero.name} is carrying a {item}")
+print(f"A potion costs {prices['potion']} coins")</div>
+</div>
+
+<div class="box box-knowledgecheck">
+  <div class="icon-badge"><img src="/images/icons/question.png" alt=""></div>
+  <div class="box-title">Check My Knowledge</div>
+  <div class="box-body">
+    <ol>
+      <li>Which earlier chapter taught you the inventory list you're using here?</li>
+      <li>What's one feature you'd add to the game next?</li>
+      <li>Trace build_summary("Nadia", [], {"potion": 5}) by hand – what does an EMPTY inventory look like once it's been joined into a sentence?</li>
+    </ol>
+  </div>
+</div>
+
+<div class="box box-retrieval">
+  <div class="icon-badge"><img src="/images/icons/star.png" alt=""></div>
+  <div class="box-title">Retrieval Challenge</div>
+  <div class="box-body">Look back at Chapter 1 – how much has this same 'variable' idea grown by Chapter 15?</div>
+</div>
+
+<div class="box box-retrieval">
+  <div class="icon-badge"><img src="/images/icons/wrench.png" alt=""></div>
+  <div class="box-title">Track B: Build</div>
+  <div class="box-body">The finished small village – every system from every chapter, working together.</div>
+</div>
