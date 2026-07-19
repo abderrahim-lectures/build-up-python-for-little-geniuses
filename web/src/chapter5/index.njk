@@ -1,0 +1,89 @@
+---
+title: "Chapter 5: Lists"
+layout: base.njk
+---
+{% from "chapter-band.njk" import render as chapterBand %}
+{{ chapterBand(5, "Lists", "inventory") }}
+
+<p>A list is an ordered sequence of values, the same idea as a numbered sequence in math – item 1, item 2, item 3.</p>
+
+<div class="box box-objectives">
+  <div class="icon-badge"><img src="/images/icons/list.png" alt=""></div>
+  <div class="box-title">By the end of this chapter, you can...</div>
+  <div class="box-body">
+    <ul>
+      <li>Create a list and add items with append()</li>
+      <li>Access an item by its index</li>
+      <li>Explain why Python lists start counting at 0</li>
+    </ul>
+  </div>
+</div>
+
+<h2>5.1 Ordered collections</h2>
+<p><code>inventory = ["sword", "shield"]</code> stores two items in order. <code>inventory[0]</code> is the first item – Python counts from 0, not 1, so the second item is <code>inventory[1]</code>. <code>append()</code> adds a new item to the end, exactly like picking up a new item in a game.</p>
+<p><strong>Worked example:</strong> Start with <code>inventory = ["sword"]</code>. After <code>inventory.append("shield")</code>, the list becomes <code>["sword", "shield"]</code> – "sword" is still at index 0, and "shield" is now at index 1, the last position. Append once more with "potion" and the list grows to <code>["sword", "shield", "potion"]</code>, with "potion" now at index 2 – append always adds to whatever the current last position is, so the index of the newest item keeps changing as the list grows.</p>
+
+<p>Run this chapter's notebook right here on the page, powered by MyBinder.</p>
+
+<button id="binder-btn-ch05_lists" class="binder-btn" onclick="
+  this.style.display='none';
+  document.getElementById('binder-loading-ch05_lists').style.display='flex';
+  var f = document.getElementById('binder-frame-ch05_lists');
+  f.addEventListener('load', function () {
+    document.getElementById('binder-loading-ch05_lists').style.display='none';
+    f.style.display='block';
+  });
+  f.src = f.dataset.src;
+">
+  <img src="/images/icons/play.png" alt="">
+  Run this chapter's notebook
+</button>
+
+<div id="binder-loading-ch05_lists" class="binder-loading" style="display:none">
+  <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
+  <img class="mascot" src="/images/mascot-waiting.png" alt="">
+  <div>
+    <div class="status-text">Launching your Jupyter session&hellip;</div>
+    <div class="dots"><span></span><span></span><span></span></div>
+  </div>
+</div>
+<div class="binder-frame-wrap">
+  <div class="icon-badge"><img src="/images/icons/play.png" alt=""></div>
+  <iframe id="binder-frame-ch05_lists" class="binder-frame" style="display:none" data-src="https://mybinder.org/v2/gh/abderrahim-lectures/build-up-python-for-little-geniuses/master?filepath=notebooks/ch05_lists.ipynb"
+    title="Chapter 5 notebook, running live via MyBinder"></iframe>
+</div>
+<p class="binder-note">&#128205; First launch can take 1–5 minutes while MyBinder builds your Python environment.</p>
+
+<div class="box box-code">
+  <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
+  <div class="box-title">lists.py</div>
+  <div class="box-body">inventory = ["sword", "shield"]
+inventory.append("potion")
+print(inventory)
+print(inventory[0])
+print(len(inventory))</div>
+</div>
+
+<div class="box box-knowledgecheck">
+  <div class="icon-badge"><img src="/images/icons/question.png" alt=""></div>
+  <div class="box-title">Check My Knowledge</div>
+  <div class="box-body">
+    <ol>
+      <li>What index gets the FIRST item in a list?</li>
+      <li>What does append() do to a list?</li>
+      <li>After three appends to an empty list, what index holds the very first item you added, and does that ever change?</li>
+    </ol>
+  </div>
+</div>
+
+<div class="box box-retrieval">
+  <div class="icon-badge"><img src="/images/icons/star.png" alt=""></div>
+  <div class="box-title">Retrieval Challenge</div>
+  <div class="box-body">Use an if statement (Chapter 4) to check whether <code>"potion"</code> is already in <code>inventory</code> before adding it.</div>
+</div>
+
+<div class="box box-retrieval">
+  <div class="icon-badge"><img src="/images/icons/wrench.png" alt=""></div>
+  <div class="box-title">Track B: Build</div>
+  <div class="box-body">Build the player's inventory system – a real Python list that tracks every item they pick up.</div>
+</div>
