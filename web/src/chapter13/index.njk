@@ -1,0 +1,95 @@
+---
+title: "Chapter 13: Blueprints"
+layout: base.njk
+---
+{% from "chapter-band.njk" import render as chapterBand %}
+{{ chapterBand(13, "Blueprints", "classes") }}
+
+<p>Grouping related facts about one thing – a shape's length AND width together – is what a class does: it bundles data and behavior into one blueprint.</p>
+
+<div class="box box-objectives">
+  <div class="icon-badge"><img src="/images/icons/blueprint.png" alt=""></div>
+  <div class="box-title">By the end of this chapter, you can...</div>
+  <div class="box-body">
+    <ul>
+      <li>Define a class with __init__ and a method</li>
+      <li>Create an object (instance) from a class</li>
+      <li>Explain the difference between a class and an object</li>
+    </ul>
+  </div>
+</div>
+
+<h2>13.1 Bundling data and behavior</h2>
+<p>A class is a blueprint; an object is one specific thing built from that blueprint. <code>class Player:</code> with an <code>__init__</code> bundles a player's name and health together, and a method like <code>take_damage</code> can update <code>self.health</code> directly – no more passing health around as a separate variable everywhere.</p>
+<p><strong>Worked example:</strong> <code>Player("Ari", 100)</code> runs <code>__init__</code> with name="Ari", health=100, setting <code>self.name</code> and <code>self.health</code> on that ONE object. Create a second one, <code>Player("Kofi", 80)</code>, and it gets its OWN <code>self.name</code>/<code>self.health</code>, completely separate from Ari's – calling <code>ari.take_damage(30)</code> only changes <code>ari.health</code> to 70; <code>kofi.health</code> stays at 80. Same blueprint, two independent objects.</p>
+
+<p>Run this chapter's notebook right here on the page, powered by MyBinder.</p>
+
+<button id="binder-btn-ch13_classes" class="binder-btn" onclick="
+  this.style.display='none';
+  document.getElementById('binder-loading-ch13_classes').style.display='flex';
+  var f = document.getElementById('binder-frame-ch13_classes');
+  f.addEventListener('load', function () {
+    document.getElementById('binder-loading-ch13_classes').style.display='none';
+    f.style.display='block';
+  });
+  f.src = f.dataset.src;
+">
+  <img src="/images/icons/play.png" alt="">
+  Run this chapter's notebook
+</button>
+
+<div id="binder-loading-ch13_classes" class="binder-loading" style="display:none">
+  <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
+  <img class="mascot" src="/images/mascot-waiting.png" alt="">
+  <div>
+    <div class="status-text">Launching your Jupyter session&hellip;</div>
+    <div class="dots"><span></span><span></span><span></span></div>
+  </div>
+</div>
+<div class="binder-frame-wrap">
+  <div class="icon-badge"><img src="/images/icons/play.png" alt=""></div>
+  <iframe id="binder-frame-ch13_classes" class="binder-frame" style="display:none" data-src="https://mybinder.org/v2/gh/abderrahim-lectures/build-up-python-for-little-geniuses/master?filepath=notebooks/ch13_classes.ipynb"
+    title="Chapter 13 notebook, running live via MyBinder"></iframe>
+</div>
+<p class="binder-note">&#128205; First launch can take 1–5 minutes while MyBinder builds your Python environment.</p>
+
+<div class="box box-code">
+  <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
+  <div class="box-title">classes.py</div>
+  <div class="box-body">class Player:
+    def __init__(self, name, health):
+        self.name = name
+        self.health = health
+
+    def take_damage(self, amount):
+        self.health = self.health - amount
+
+hero = Player("Ari", 100)
+hero.take_damage(30)
+print(hero.name, hero.health)</div>
+</div>
+
+<div class="box box-knowledgecheck">
+  <div class="icon-badge"><img src="/images/icons/question.png" alt=""></div>
+  <div class="box-title">Check My Knowledge</div>
+  <div class="box-body">
+    <ol>
+      <li>What's the difference between the Player class and hero = Player("Ari", 100)?</li>
+      <li>What does self refer to inside a method?</li>
+      <li>If you create Player("Ari", 100) and Player("Kofi", 100), then call only kofi.take_damage(50), what is ari.health afterward? What is kofi.health?</li>
+    </ol>
+  </div>
+</div>
+
+<div class="box box-retrieval">
+  <div class="icon-badge"><img src="/images/icons/star.png" alt=""></div>
+  <div class="box-title">Retrieval Challenge</div>
+  <div class="box-body">Notice take_damage() already uses an if-like idea (Chapter 4) via max() so health can't go below 0.</div>
+</div>
+
+<div class="box box-retrieval">
+  <div class="icon-badge"><img src="/images/icons/wrench.png" alt=""></div>
+  <div class="box-title">Track B: Build</div>
+  <div class="box-body">Turn Player, Enemy, and Item into real classes instead of separate loose variables.</div>
+</div>
