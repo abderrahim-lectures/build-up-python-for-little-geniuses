@@ -1,0 +1,92 @@
+---
+title: "Chapter 4: Making Choices"
+layout: base.njk
+---
+{% from "chapter-band.njk" import render as chapterBand %}
+{{ chapterBand(4, "Making Choices", "ch04") }}
+
+<p>A number line splits into 'less than', 'equal to', and 'greater than' – if/elif/else lets your code make exactly that kind of choice.</p>
+
+<div class="box box-objectives">
+  <div class="icon-badge"><img src="/images/icons/fork.png" alt=""></div>
+  <div class="box-title">By the end of this chapter, you can...</div>
+  <div class="box-body">
+    <ul>
+      <li>Write an if/elif/else chain</li>
+      <li>Use comparison operators (<, >, ==)</li>
+      <li>Explain why only one branch of an if/elif/else ever runs</li>
+    </ul>
+  </div>
+</div>
+
+<h2>4.1 Choosing a branch</h2>
+<p>Comparing numbers is something you already do on a number line: is 7 greater than 4? Python asks the same question with <code>&gt;</code>, <code>&lt;</code>, <code>==</code>, <code>&gt;=</code>, <code>&lt;=</code>. An if/elif/else chain checks conditions in order and runs only the first branch that's true – like a flowchart with one path through it.</p>
+<p><strong>Worked example:</strong> Walk <code>health = 40</code> through the chain step by step: Python asks first "is 40 &lt;= 0?" – no, so it moves to the next check. Then "is 40 &lt; 25?" – also no, so it moves on again. Since no elif matched, the else branch runs and status becomes "ok". Change health to 10: the first check still fails, but the second now succeeds, so status becomes "low health" instead – and Python never even looks at the else.</p>
+
+<p>Run this chapter's notebook right here on the page, powered by MyBinder.</p>
+
+<button id="binder-btn-ch04_conditionals" class="binder-btn" onclick="
+  this.style.display='none';
+  document.getElementById('binder-loading-ch04_conditionals').style.display='flex';
+  var f = document.getElementById('binder-frame-ch04_conditionals');
+  f.addEventListener('load', function () {
+    document.getElementById('binder-loading-ch04_conditionals').style.display='none';
+    f.style.display='block';
+  });
+  f.src = f.dataset.src;
+">
+  <img src="/images/icons/play.png" alt="">
+  Run this chapter's notebook
+</button>
+
+<div id="binder-loading-ch04_conditionals" class="binder-loading" style="display:none">
+  <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
+  <img class="mascot" src="/images/mascot-waiting.png" alt="">
+  <div>
+    <div class="status-text">Launching your Jupyter session&hellip;</div>
+    <div class="dots"><span></span><span></span><span></span></div>
+  </div>
+</div>
+<div class="binder-frame-wrap">
+  <div class="icon-badge"><img src="/images/icons/play.png" alt=""></div>
+  <iframe id="binder-frame-ch04_conditionals" class="binder-frame" style="display:none" data-src="https://mybinder.org/v2/gh/abderrahim-lectures/build-up-python-for-little-geniuses/master?filepath=notebooks/ch04_conditionals.ipynb"
+    title="Chapter 4 notebook, running live via MyBinder"></iframe>
+</div>
+<p class="binder-note">&#128205; First launch can take 1–5 minutes while MyBinder builds your Python environment.</p>
+
+<div class="box box-code">
+  <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
+  <div class="box-title">conditionals.py</div>
+  <div class="box-body">health = 15
+if health <= 0:
+    status = "defeated"
+elif health < 25:
+    status = "low health"
+else:
+    status = "ok"
+print(status)</div>
+</div>
+
+<div class="box box-knowledgecheck">
+  <div class="icon-badge"><img src="/images/icons/question.png" alt=""></div>
+  <div class="box-title">Check My Knowledge</div>
+  <div class="box-body">
+    <ol>
+      <li>Why does only one branch of an if/elif/else run, even if two conditions could be true?</li>
+      <li>What status does health = 25 give, and why not "low health"?</li>
+      <li>Trace through health_status(3) by hand, one condition at a time, before running the code – were you right?</li>
+    </ol>
+  </div>
+</div>
+
+<div class="box box-retrieval">
+  <div class="icon-badge"><img src="/images/icons/star.png" alt=""></div>
+  <div class="box-title">Retrieval Challenge</div>
+  <div class="box-body">Print (Chapter 0) the health_status message using an f-string (Chapter 3).</div>
+</div>
+
+<div class="box box-retrieval">
+  <div class="icon-badge"><img src="/images/icons/wrench.png" alt=""></div>
+  <div class="box-title">Track B: Build</div>
+  <div class="box-body">Check whether the player has walked off the edge of the game world before letting them move.</div>
+</div>
