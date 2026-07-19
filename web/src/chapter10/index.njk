@@ -1,0 +1,88 @@
+---
+title: "Chapter 10: The Grid"
+layout: base.njk
+---
+{% from "chapter-band.njk" import render as chapterBand %}
+{{ chapterBand(10, "The Grid", "ch10") }}
+
+<p>The coordinate plane from math class – an x and a y telling you exactly where a point is – is exactly how a 2D game world tracks where everything stands.</p>
+
+<div class="box box-objectives">
+  <div class="icon-badge"><img src="/images/icons/target.png" alt=""></div>
+  <div class="box-title">By the end of this chapter, you can...</div>
+  <div class="box-body">
+    <ul>
+      <li>Represent a position as an (x, y) pair</li>
+      <li>Update a position by adding a movement delta</li>
+      <li>Explain how a 2D grid maps to the game screen</li>
+    </ul>
+  </div>
+</div>
+
+<h2>10.1 Positions as coordinates</h2>
+<p>A point on a coordinate plane is just two numbers: (x, y). A game position works the same way – a tuple <code>(x, y)</code> tells you exactly where the player stands on the grid. Moving right adds to x; moving down adds to y (screens count y downward, unlike most math classes!).</p>
+<p><strong>Worked example:</strong> Starting at (2, 3), <code>move(pos, 1, 0)</code> adds 1 to the x-coordinate only: (2+1, 3+0) = (3, 3) – the point slides right, same height. <code>move(pos, 0, -1)</code> adds -1 to y instead: (2, 3-1) = (2, 2) – since y counts downward on screen, a NEGATIVE dy actually moves the point UP, which can feel backwards coming from math class.</p>
+
+<p>Run this chapter's notebook right here on the page, powered by MyBinder.</p>
+
+<button id="binder-btn-ch10_grid" class="binder-btn" onclick="
+  this.style.display='none';
+  document.getElementById('binder-loading-ch10_grid').style.display='flex';
+  var f = document.getElementById('binder-frame-ch10_grid');
+  f.addEventListener('load', function () {
+    document.getElementById('binder-loading-ch10_grid').style.display='none';
+    f.style.display='block';
+  });
+  f.src = f.dataset.src;
+">
+  <img src="/images/icons/play.png" alt="">
+  Run this chapter's notebook
+</button>
+
+<div id="binder-loading-ch10_grid" class="binder-loading" style="display:none">
+  <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
+  <img class="mascot" src="/images/mascot-waiting.png" alt="">
+  <div>
+    <div class="status-text">Launching your Jupyter session&hellip;</div>
+    <div class="dots"><span></span><span></span><span></span></div>
+  </div>
+</div>
+<div class="binder-frame-wrap">
+  <div class="icon-badge"><img src="/images/icons/play.png" alt=""></div>
+  <iframe id="binder-frame-ch10_grid" class="binder-frame" style="display:none" data-src="https://mybinder.org/v2/gh/abderrahim-lectures/build-up-python-for-little-geniuses/master?filepath=notebooks/ch10_grid.ipynb"
+    title="Chapter 10 notebook, running live via MyBinder"></iframe>
+</div>
+<p class="binder-note">&#128205; First launch can take 1–5 minutes while MyBinder builds your Python environment.</p>
+
+<div class="box box-code">
+  <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
+  <div class="box-title">grid.py</div>
+  <div class="box-body">player_pos = (2, 3)
+dx, dy = 1, 0
+new_pos = (player_pos[0] + dx, player_pos[1] + dy)
+print(new_pos)</div>
+</div>
+
+<div class="box box-knowledgecheck">
+  <div class="icon-badge"><img src="/images/icons/question.png" alt=""></div>
+  <div class="box-title">Check My Knowledge</div>
+  <div class="box-body">
+    <ol>
+      <li>What two numbers make up a position on the grid?</li>
+      <li>If you add 1 to y, does the point move up or down on the screen?</li>
+      <li>Starting at (5, 5), what position do you get after move(pos, -2, 3)? Which direction did the point move overall?</li>
+    </ol>
+  </div>
+</div>
+
+<div class="box box-retrieval">
+  <div class="icon-badge"><img src="/images/icons/star.png" alt=""></div>
+  <div class="box-title">Retrieval Challenge</div>
+  <div class="box-body">Write a for loop (Chapter 6) that moves the player right 3 times and prints the position after each step.</div>
+</div>
+
+<div class="box box-retrieval">
+  <div class="icon-badge"><img src="/images/icons/wrench.png" alt=""></div>
+  <div class="box-title">Track B: Build</div>
+  <div class="box-body">The whole game world becomes a real grid of coordinates the camera can scroll across.</div>
+</div>
