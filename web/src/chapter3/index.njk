@@ -1,0 +1,89 @@
+---
+title: "Chapter 3: Strings & Words"
+layout: base.njk
+---
+{% from "chapter-band.njk" import render as chapterBand %}
+{{ chapterBand(3, "Strings & Words", "ch03") }}
+
+<p>Word problems mix numbers and words – Python's f-strings let your code do the same, dropping a variable's value right into a sentence.</p>
+
+<div class="box box-objectives">
+  <div class="icon-badge"><img src="/images/icons/speech-bubble.png" alt=""></div>
+  <div class="box-title">By the end of this chapter, you can...</div>
+  <div class="box-body">
+    <ul>
+      <li>Combine text and variables with an f-string</li>
+      <li>Use len() to find how many characters are in a string</li>
+      <li>Explain the difference between a string and a number in Python</li>
+    </ul>
+  </div>
+</div>
+
+<h2>3.1 Mixing words and numbers</h2>
+<p><code>"5"</code> and <code>5</code> look similar but behave differently: <code>"5"</code> is text (a string), <code>5</code> is a number. An f-string – <code>f"..."</code> – lets you drop a variable straight into a sentence: <code>f"{player_name} has {score} points"</code>. <code>len(text)</code> counts characters, which is handy for things like limiting a player name to a certain length.</p>
+<p><strong>Worked example:</strong> Suppose <code>player_name = "Nadia"</code> and <code>score = 42</code>. <code>f"{player_name} has {score} points"</code> builds the sentence piece by piece: first "Nadia" replaces <code>{player_name}</code>, then 42 (converted to text automatically) replaces <code>{score}</code> – the final string is "Nadia has 42 points", built from a string and a number without you ever converting <code>score</code> to text yourself.</p>
+
+<p>Run this chapter's notebook right here on the page, powered by MyBinder.</p>
+
+<button id="binder-btn-ch03_strings" class="binder-btn" onclick="
+  this.style.display='none';
+  document.getElementById('binder-loading-ch03_strings').style.display='flex';
+  var f = document.getElementById('binder-frame-ch03_strings');
+  f.addEventListener('load', function () {
+    document.getElementById('binder-loading-ch03_strings').style.display='none';
+    f.style.display='block';
+  });
+  f.src = f.dataset.src;
+">
+  <img src="/images/icons/play.png" alt="">
+  Run this chapter's notebook
+</button>
+
+<div id="binder-loading-ch03_strings" class="binder-loading" style="display:none">
+  <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
+  <img class="mascot" src="/images/mascot-waiting.png" alt="">
+  <div>
+    <div class="status-text">Launching your Jupyter session&hellip;</div>
+    <div class="dots"><span></span><span></span><span></span></div>
+  </div>
+</div>
+<div class="binder-frame-wrap">
+  <div class="icon-badge"><img src="/images/icons/play.png" alt=""></div>
+  <iframe id="binder-frame-ch03_strings" class="binder-frame" style="display:none" data-src="https://mybinder.org/v2/gh/abderrahim-lectures/build-up-python-for-little-geniuses/master?filepath=notebooks/ch03_strings.ipynb"
+    title="Chapter 3 notebook, running live via MyBinder"></iframe>
+</div>
+<p class="binder-note">&#128205; First launch can take 1–5 minutes while MyBinder builds your Python environment.</p>
+
+<div class="box box-code">
+  <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
+  <div class="box-title">strings.py</div>
+  <div class="box-body">player_name = "Ari"
+score = 10
+message = f"{player_name} has {score} points"
+print(message)
+print(len(player_name))</div>
+</div>
+
+<div class="box box-knowledgecheck">
+  <div class="icon-badge"><img src="/images/icons/question.png" alt=""></div>
+  <div class="box-title">Check My Knowledge</div>
+  <div class="box-body">
+    <ol>
+      <li>What does <code>f"..."</code> let you do that a plain string can't?</li>
+      <li>What does <code>len("Ari")</code> return?</li>
+      <li>If name = "Sam" and points = 7, write out exactly what f"{name} scored {points}!" produces, character by character if you're not sure.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="box box-retrieval">
+  <div class="icon-badge"><img src="/images/icons/star.png" alt=""></div>
+  <div class="box-title">Retrieval Challenge</div>
+  <div class="box-body">Use a variable (Chapter 1) inside an f-string to print your own score sentence.</div>
+</div>
+
+<div class="box box-retrieval">
+  <div class="icon-badge"><img src="/images/icons/wrench.png" alt=""></div>
+  <div class="box-title">Track B: Build</div>
+  <div class="box-body">Show the player's name and health as real on-screen text instead of just numbers in the console.</div>
+</div>
