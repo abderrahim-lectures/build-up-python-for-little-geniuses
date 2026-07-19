@@ -1,0 +1,92 @@
+---
+title: "Chapter 8: Functions"
+layout: base.njk
+---
+{% from "chapter-band.njk" import render as chapterBand %}
+{{ chapterBand(8, "Functions", "ch08") }}
+
+<p>A math formula like <code>area = length * width</code> takes inputs and produces an output – a Python function is exactly that: input in, answer out.</p>
+
+<div class="box box-objectives">
+  <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
+  <div class="box-title">By the end of this chapter, you can...</div>
+  <div class="box-body">
+    <ul>
+      <li>Define a function with def, parameters, and return</li>
+      <li>Call a function with different arguments</li>
+      <li>Explain why functions help avoid repeating code</li>
+    </ul>
+  </div>
+</div>
+
+<h2>8.1 Formulas as functions</h2>
+<p><code>def area(length, width): return length * width</code> defines a reusable formula. Call it with <code>area(4, 5)</code> and it returns <code>20</code>, just like plugging numbers into a math formula. Functions let you write the logic once and reuse it everywhere.<br><br><strong>From this chapter on, Track B needs a real window on your own computer</strong> – pgzero can't draw a window inside MyBinder, so this is when you install Python locally.</p>
+<p><strong>Worked example:</strong> <code>area(4, 5)</code> substitutes length=4 and width=5 into <code>return length * width</code>, giving 20. Call it again with different numbers, <code>area(7, 2)</code>, and the SAME function returns 14 – nothing about the function itself changed, only the numbers you handed it. That's the whole point: one formula, reused for as many rectangles as you need, the same way one math formula works for every rectangle you ever measure.</p>
+
+<p>Run this chapter's notebook right here on the page, powered by MyBinder.</p>
+
+<button id="binder-btn-ch08_functions" class="binder-btn" onclick="
+  this.style.display='none';
+  document.getElementById('binder-loading-ch08_functions').style.display='flex';
+  var f = document.getElementById('binder-frame-ch08_functions');
+  f.addEventListener('load', function () {
+    document.getElementById('binder-loading-ch08_functions').style.display='none';
+    f.style.display='block';
+  });
+  f.src = f.dataset.src;
+">
+  <img src="/images/icons/play.png" alt="">
+  Run this chapter's notebook
+</button>
+
+<div id="binder-loading-ch08_functions" class="binder-loading" style="display:none">
+  <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
+  <img class="mascot" src="/images/mascot-waiting.png" alt="">
+  <div>
+    <div class="status-text">Launching your Jupyter session&hellip;</div>
+    <div class="dots"><span></span><span></span><span></span></div>
+  </div>
+</div>
+<div class="binder-frame-wrap">
+  <div class="icon-badge"><img src="/images/icons/play.png" alt=""></div>
+  <iframe id="binder-frame-ch08_functions" class="binder-frame" style="display:none" data-src="https://mybinder.org/v2/gh/abderrahim-lectures/build-up-python-for-little-geniuses/master?filepath=notebooks/ch08_functions.ipynb"
+    title="Chapter 8 notebook, running live via MyBinder"></iframe>
+</div>
+<p class="binder-note">&#128205; First launch can take 1–5 minutes while MyBinder builds your Python environment.</p>
+
+<div class="box box-code">
+  <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
+  <div class="box-title">functions.py</div>
+  <div class="box-body">def area(length, width):
+    return length * width
+
+def move_player(x, dx):
+    return x + dx
+
+print(area(4, 5))
+print(move_player(10, 3))</div>
+</div>
+
+<div class="box box-knowledgecheck">
+  <div class="icon-badge"><img src="/images/icons/question.png" alt=""></div>
+  <div class="box-title">Check My Knowledge</div>
+  <div class="box-body">
+    <ol>
+      <li>What two things does a function need to give back an answer?</li>
+      <li>Why is a function better than copy-pasting the same code three times?</li>
+      <li>Without running it, what does area(9, 3) return? What about move_player(0, -2)?</li>
+    </ol>
+  </div>
+</div>
+
+<div class="box box-retrieval">
+  <div class="icon-badge"><img src="/images/icons/star.png" alt=""></div>
+  <div class="box-title">Retrieval Challenge</div>
+  <div class="box-body">Call your area() function inside a for loop (Chapter 6) to print the area for a few different widths.</div>
+</div>
+
+<div class="box box-retrieval">
+  <div class="icon-badge"><img src="/images/icons/wrench.png" alt=""></div>
+  <div class="box-title">Track B: Build</div>
+  <div class="box-body">Refactor player movement into its own function – and install Python locally, since pgzero needs a real window from here on.</div>
+</div>
