@@ -1,0 +1,88 @@
+---
+title: "Chapter 1: Variables"
+layout: base.njk
+---
+{% from "chapter-band.njk" import render as chapterBand %}
+{{ chapterBand(1, "Variables", "crates") }}
+
+<p>A variable is like a labelled storage crate: put a value inside, write a name on it, and Python remembers it until you change it.</p>
+
+<div class="box box-objectives">
+  <div class="icon-badge"><img src="/images/icons/tag.png" alt=""></div>
+  <div class="box-title">By the end of this chapter, you can...</div>
+  <div class="box-body">
+    <ul>
+      <li>Store a value in a variable</li>
+      <li>Explain why we give variables meaningful names</li>
+      <li>Update a variable and see the new value take effect</li>
+    </ul>
+  </div>
+</div>
+
+<h2>1.1 Naming your values</h2>
+<p>In math you might write <code>x = 5</code> and know <code>x</code> stands for 5 from then on. Python works the same way: <code>player_name = "Ari"</code> stores the text <code>"Ari"</code> under the name <code>player_name</code>. Change what's on the right of the <code>=</code> sign, and the crate's label stays the same but what's inside changes.</p>
+<p><strong>Worked example:</strong> Say you're tracking three separate facts about a hero: their name is "Ari", their score starts at 0, and their health starts at 100. Each fact gets its own crate: <code>player_name = "Ari"</code>, <code>score = 0</code>, <code>health = 100</code>. Later, when Ari earns 10 points, you don't relabel anything – you just replace what's inside the score crate: <code>score = score + 10</code> makes <code>score</code> become <code>10</code>, while <code>player_name</code> and <code>health</code> stay untouched.</p>
+
+<p>Run this chapter's notebook right here on the page, powered by MyBinder.</p>
+
+<button id="binder-btn-ch01_variables" class="binder-btn" onclick="
+  this.style.display='none';
+  document.getElementById('binder-loading-ch01_variables').style.display='flex';
+  var f = document.getElementById('binder-frame-ch01_variables');
+  f.addEventListener('load', function () {
+    document.getElementById('binder-loading-ch01_variables').style.display='none';
+    f.style.display='block';
+  });
+  f.src = f.dataset.src;
+">
+  <img src="/images/icons/play.png" alt="">
+  Run this chapter's notebook
+</button>
+
+<div id="binder-loading-ch01_variables" class="binder-loading" style="display:none">
+  <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
+  <img class="mascot" src="/images/mascot-waiting.png" alt="">
+  <div>
+    <div class="status-text">Launching your Jupyter session&hellip;</div>
+    <div class="dots"><span></span><span></span><span></span></div>
+  </div>
+</div>
+<div class="binder-frame-wrap">
+  <div class="icon-badge"><img src="/images/icons/play.png" alt=""></div>
+  <iframe id="binder-frame-ch01_variables" class="binder-frame" style="display:none" data-src="https://mybinder.org/v2/gh/abderrahim-lectures/build-up-python-for-little-geniuses/master?filepath=notebooks/ch01_variables.ipynb"
+    title="Chapter 1 notebook, running live via MyBinder"></iframe>
+</div>
+<p class="binder-note">&#128205; First launch can take 1–5 minutes while MyBinder builds your Python environment.</p>
+
+<div class="box box-code">
+  <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
+  <div class="box-title">variables.py</div>
+  <div class="box-body">player_name = "Ari"
+score = 0
+health = 100
+print(player_name, score, health)</div>
+</div>
+
+<div class="box box-knowledgecheck">
+  <div class="icon-badge"><img src="/images/icons/question.png" alt=""></div>
+  <div class="box-title">Check My Knowledge</div>
+  <div class="box-body">
+    <ol>
+      <li>What symbol stores a value in a variable?</li>
+      <li>What happens if you use a variable before giving it a value?</li>
+      <li>If score = 5 and you then run score = score + 3, what does score equal afterward, and why doesn't Python get confused about which crate to update?</li>
+    </ol>
+  </div>
+</div>
+
+<div class="box box-retrieval">
+  <div class="icon-badge"><img src="/images/icons/star.png" alt=""></div>
+  <div class="box-title">Retrieval Challenge</div>
+  <div class="box-body">Use <code>print()</code> (Chapter 0) to print your <code>score</code> variable by itself.</div>
+</div>
+
+<div class="box box-retrieval">
+  <div class="icon-badge"><img src="/images/icons/wrench.png" alt=""></div>
+  <div class="box-title">Track B: Build</div>
+  <div class="box-body">Your player character gets its first real data: name, health, and starting position – all stored in variables you'll reuse in every later chapter.</div>
+</div>
