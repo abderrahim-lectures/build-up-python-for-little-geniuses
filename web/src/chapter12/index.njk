@@ -1,0 +1,89 @@
+---
+title: "Chapter 12: Chance"
+layout: base.njk
+---
+{% from "chapter-band.njk" import render as chapterBand %}
+{{ chapterBand(12, "Chance", "ch12") }}
+
+<p>Rolling a die or flipping a coin is probability in action – Python's random module lets your code do the same roll.</p>
+
+<div class="box box-objectives">
+  <div class="icon-badge"><img src="/images/icons/dice.png" alt=""></div>
+  <div class="box-title">By the end of this chapter, you can...</div>
+  <div class="box-body">
+    <ul>
+      <li>Use random.randint() to simulate a dice roll</li>
+      <li>Use random.choice() to pick from a list</li>
+      <li>Explain what 'equally likely' means for random.randint()</li>
+    </ul>
+  </div>
+</div>
+
+<h2>12.1 Simulating randomness</h2>
+<p><code>random.randint(1, 6)</code> picks a whole number from 1 to 6, each equally likely – a simulated die roll. <code>random.choice([...])</code> picks one item from a list at random, useful for things like loot drops after defeating an enemy.</p>
+<p><strong>Worked example:</strong> random.randint(1, 6) doesn't favor any number – over many rolls, 1 through 6 each come up roughly 1/6 of the time, the same probability you'd calculate for a fair six-sided die. That's different from random.choice(['sword','shield','potion']): with three equally-likely items, each one shows up roughly 1/3 of the time, no matter how many times you've rolled 'sword' in a row before.</p>
+
+<p>Run this chapter's notebook right here on the page, powered by MyBinder.</p>
+
+<button id="binder-btn-ch12_chance" class="binder-btn" onclick="
+  this.style.display='none';
+  document.getElementById('binder-loading-ch12_chance').style.display='flex';
+  var f = document.getElementById('binder-frame-ch12_chance');
+  f.addEventListener('load', function () {
+    document.getElementById('binder-loading-ch12_chance').style.display='none';
+    f.style.display='block';
+  });
+  f.src = f.dataset.src;
+">
+  <img src="/images/icons/play.png" alt="">
+  Run this chapter's notebook
+</button>
+
+<div id="binder-loading-ch12_chance" class="binder-loading" style="display:none">
+  <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
+  <img class="mascot" src="/images/mascot-waiting.png" alt="">
+  <div>
+    <div class="status-text">Launching your Jupyter session&hellip;</div>
+    <div class="dots"><span></span><span></span><span></span></div>
+  </div>
+</div>
+<div class="binder-frame-wrap">
+  <div class="icon-badge"><img src="/images/icons/play.png" alt=""></div>
+  <iframe id="binder-frame-ch12_chance" class="binder-frame" style="display:none" data-src="https://mybinder.org/v2/gh/abderrahim-lectures/build-up-python-for-little-geniuses/master?filepath=notebooks/ch12_chance.ipynb"
+    title="Chapter 12 notebook, running live via MyBinder"></iframe>
+</div>
+<p class="binder-note">&#128205; First launch can take 1–5 minutes while MyBinder builds your Python environment.</p>
+
+<div class="box box-code">
+  <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
+  <div class="box-title">chance.py</div>
+  <div class="box-body">import random
+
+roll = random.randint(1, 6)
+loot = random.choice(["sword", "shield", "potion"])
+print(roll, loot)</div>
+</div>
+
+<div class="box box-knowledgecheck">
+  <div class="icon-badge"><img src="/images/icons/question.png" alt=""></div>
+  <div class="box-title">Check My Knowledge</div>
+  <div class="box-body">
+    <ol>
+      <li>What numbers can random.randint(1, 6) return?</li>
+      <li>Why might two different runs of your code give different loot?</li>
+      <li>If you called roll_die(2) a hundred times, roughly how many times would you expect to see a 1? Why doesn't a run of five 2s in a row mean a 1 is 'due'?</li>
+    </ol>
+  </div>
+</div>
+
+<div class="box box-retrieval">
+  <div class="icon-badge"><img src="/images/icons/star.png" alt=""></div>
+  <div class="box-title">Retrieval Challenge</div>
+  <div class="box-body">Use random.choice() inside an if statement (Chapter 4) that reacts differently depending on which item was picked.</div>
+</div>
+
+<div class="box box-retrieval">
+  <div class="icon-badge"><img src="/images/icons/wrench.png" alt=""></div>
+  <div class="box-title">Track B: Build</div>
+  <div class="box-body">Loot drops and enemy spawns become genuinely random, using this exact roll_die() function.</div>
+</div>
