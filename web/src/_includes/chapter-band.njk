@@ -1,0 +1,27 @@
+{% macro render(num, title, theme) %}
+<div class="chapter-band">
+  <div class="chapter-num-badge">{{ "0" if num < 10 else "" }}{{ num }}</div>
+  <div class="chapter-band-media">
+    <div class="chapter-band-inner">
+      <div class="chapter-sky"></div>
+      <div class="chapter-tiles{{ ' theme-' + theme if theme else '' }}">
+        <span class="wall-light wall-light-1"></span>
+        <span class="wall-light wall-light-2"></span>
+        <span class="anim-tree"></span>
+        <span class="anim-character"></span>
+        <span class="anim-car"></span>
+      </div>
+    </div>
+    <h1>{{ title }}</h1>
+  </div>
+</div>
+
+<div class="chapter-progress">
+  <span class="label">Chapter {{ num }} of 15</span>
+  <div class="trail">
+    {% for i in range(0, 16) %}
+      {% if i == num %}<span class="current">{{ i }}</span>{% else %}<a href="/chapter{{ i }}/">{{ i }}</a>{% endif %}
+    {% endfor %}
+  </div>
+</div>
+{% endmacro %}

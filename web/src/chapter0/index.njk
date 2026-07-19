@@ -2,12 +2,8 @@
 title: "Chapter 0: Welcome"
 layout: base.njk
 ---
-<div class="chapter-band">
-  <div class="kicker">Build Up</div>
-  <span class="chapter-num">Chapter 0</span>
-  <h1>Welcome</h1>
-  <div class="badge"><img src="/images/welcome-badge.png" alt="A green and yellow pixel-art badge icon."></div>
-</div>
+{% from "chapter-band.njk" import render as chapterBand %}
+{{ chapterBand(0, "Welcome", "ch00") }}
 
 <p>Welcome to <em>Build Up: Python for Little Geniuses</em>!</p>
 <p>In this book, you will learn to write real Python code. Math problems
@@ -31,14 +27,36 @@ piece by piece, chapter by chapter.</p>
 right here on the page, powered by MyBinder &ndash; a free service that
 runs real Python in your browser.</p>
 
-<button class="binder-btn" onclick="document.getElementById('binder-frame-ch00').style.display='block'; this.style.display='none';">
-  &#9654; Run this chapter's notebook
+<button id="binder-btn-ch00" class="binder-btn" onclick="
+  this.style.display='none';
+  document.getElementById('binder-loading-ch00').style.display='flex';
+  var f = document.getElementById('binder-frame-ch00');
+  f.addEventListener('load', function () {
+    document.getElementById('binder-loading-ch00').style.display='none';
+    f.style.display='block';
+  });
+  f.src = f.dataset.src;
+">
+  <img src="/images/icons/play.png" alt="">
+  Run this chapter's notebook
 </button>
-<iframe id="binder-frame-ch00" class="binder-frame" style="display:none"
-  src="https://mybinder.org/v2/gh/abderrahim-lectures/build-up-python-for-little-geniuses/master?filepath=notebooks/ch00_welcome.ipynb"
-  title="Chapter 0 notebook, running live via MyBinder"></iframe>
-<p class="binder-note">First launch can take a minute or two while MyBinder
-builds your Python environment &ndash; that is normal, not broken.</p>
+
+<div id="binder-loading-ch00" class="binder-loading" style="display:none">
+  <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
+  <img class="mascot" src="/images/mascot-waiting.png" alt="">
+  <div>
+    <div class="status-text">Launching your Jupyter session&hellip;</div>
+    <div class="dots"><span></span><span></span><span></span></div>
+  </div>
+</div>
+<div class="binder-frame-wrap">
+  <div class="icon-badge"><img src="/images/icons/play.png" alt=""></div>
+  <iframe id="binder-frame-ch00" class="binder-frame" style="display:none" data-src="https://mybinder.org/v2/gh/abderrahim-lectures/build-up-python-for-little-geniuses/master?filepath=notebooks/ch00_welcome.ipynb"
+    title="Chapter 0 notebook, running live via MyBinder"></iframe>
+</div>
+<p class="binder-note">&#128205; First launch can take 1&ndash;5 minutes while
+MyBinder builds your Python environment &ndash; the workshop's warming up,
+that is normal, not broken.</p>
 
 <div class="box box-code">
   <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
@@ -102,3 +120,28 @@ chapter ends with two short checks: a self-graded &ldquo;Check My
 Knowledge&rdquo; quiz, and a challenge that mixes in ideas from earlier
 chapters, so you keep old skills sharp while you learn new ones.
 </p>
+
+<h2>0.4 What you'll unlock</h2>
+<p>Two milestones show up again and again as you build your game. Keep an
+eye out for them:</p>
+
+<div class="spread">
+  <div class="box box-quest">
+    <div class="icon-badge"><img src="/images/icons/scroll.png" alt=""></div>
+    <div class="box-title">Quest Log</div>
+    <div class="box-body">
+      A running list of what your character can do so far &ndash; every
+      chapter adds a new entry, so you always have a record of the skills
+      (and code) you've unlocked.
+    </div>
+  </div>
+  <div class="box box-shop">
+    <div class="icon-badge"><img src="/images/icons/shopping-cart.png" alt=""></div>
+    <div class="box-title">Shop Economy</div>
+    <div class="box-body">
+      The in-game currency and shop system you'll code yourself &ndash; a
+      later chapter turns the math you're learning (adding, comparing,
+      budgeting) straight into working shop code.
+    </div>
+  </div>
+</div>
