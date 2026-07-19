@@ -1,0 +1,93 @@
+---
+title: "Chapter 9: Area & Perimeter"
+layout: base.njk
+---
+{% from "chapter-band.njk" import render as chapterBand %}
+{{ chapterBand(9, "Area & Perimeter", "fence") }}
+
+<p>Fencing off a rectangular plot of land needs its perimeter; covering it with grass needs its area – both are just formulas turned into functions.</p>
+
+<div class="box box-objectives">
+  <div class="icon-badge"><img src="/images/icons/map.png" alt=""></div>
+  <div class="box-title">By the end of this chapter, you can...</div>
+  <div class="box-body">
+    <ul>
+      <li>Write functions for area and perimeter of a rectangle</li>
+      <li>Explain the difference between area and perimeter</li>
+      <li>Combine variables, arithmetic, and functions in one program</li>
+    </ul>
+  </div>
+</div>
+
+<h2>9.1 Two formulas, one shape</h2>
+<p><code>area = length * width</code> tells you how much surface a rectangle covers; <code>perimeter = 2 * (length + width)</code> tells you the distance all the way around it – like the fence you'd need to build around a plot of land. Writing both as functions means any part of your program can ask 'how big is this plot?' without recalculating by hand.</p>
+<p><strong>Worked example:</strong> A 6-by-4 plot: <code>area(6, 4)</code> computes 6 * 4 = 24 (24 square units of grass to cover). <code>perimeter(6, 4)</code> computes 2 * (6 + 4) = 2 * 10 = 20 (20 units of fence to build all the way around). Notice a 6x4 plot and a 4x6 plot have the exact same area and perimeter – length and width are interchangeable in both formulas, since multiplication and addition don't care about order.</p>
+
+<p>Run this chapter's notebook right here on the page, powered by MyBinder.</p>
+
+<button id="binder-btn-ch09_area_perimeter" class="binder-btn" onclick="
+  this.style.display='none';
+  document.getElementById('binder-loading-ch09_area_perimeter').style.display='flex';
+  var f = document.getElementById('binder-frame-ch09_area_perimeter');
+  f.addEventListener('load', function () {
+    document.getElementById('binder-loading-ch09_area_perimeter').style.display='none';
+    f.style.display='block';
+  });
+  f.src = f.dataset.src;
+">
+  <img src="/images/icons/play.png" alt="">
+  Run this chapter's notebook
+</button>
+
+<div id="binder-loading-ch09_area_perimeter" class="binder-loading" style="display:none">
+  <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
+  <img class="mascot" src="/images/mascot-waiting.png" alt="">
+  <div>
+    <div class="status-text">Launching your Jupyter session&hellip;</div>
+    <div class="dots"><span></span><span></span><span></span></div>
+  </div>
+</div>
+<div class="binder-frame-wrap">
+  <div class="icon-badge"><img src="/images/icons/play.png" alt=""></div>
+  <iframe id="binder-frame-ch09_area_perimeter" class="binder-frame" style="display:none" data-src="https://mybinder.org/v2/gh/abderrahim-lectures/build-up-python-for-little-geniuses/master?filepath=notebooks/ch09_area_perimeter.ipynb"
+    title="Chapter 9 notebook, running live via MyBinder"></iframe>
+</div>
+<p class="binder-note">&#128205; First launch can take 1–5 minutes while MyBinder builds your Python environment.</p>
+
+<div class="box box-code">
+  <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
+  <div class="box-title">area_perimeter.py</div>
+  <div class="box-body">def area(length, width):
+    return length * width
+
+def perimeter(length, width):
+    return 2 * (length + width)
+
+plot_length, plot_width = 6, 4
+print("area:", area(plot_length, plot_width))
+print("perimeter:", perimeter(plot_length, plot_width))</div>
+</div>
+
+<div class="box box-knowledgecheck">
+  <div class="icon-badge"><img src="/images/icons/question.png" alt=""></div>
+  <div class="box-title">Check My Knowledge</div>
+  <div class="box-body">
+    <ol>
+      <li>Which formula tells you how much fence to buy: area or perimeter?</li>
+      <li>If a plot is 6 by 4, what's its area?</li>
+      <li>A square plot is 5 by 5. Work out its area and perimeter by hand, then check with the functions.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="box box-retrieval">
+  <div class="icon-badge"><img src="/images/icons/star.png" alt=""></div>
+  <div class="box-title">Retrieval Challenge</div>
+  <div class="box-body">Use an if statement (Chapter 4) to compare two plots and print which one has the larger area.</div>
+</div>
+
+<div class="box box-retrieval">
+  <div class="icon-badge"><img src="/images/icons/wrench.png" alt=""></div>
+  <div class="box-title">Track B: Build</div>
+  <div class="box-body">Fence off your first land plot in the game world, sized by real area/perimeter math.</div>
+</div>
