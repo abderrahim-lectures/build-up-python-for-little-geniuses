@@ -24,7 +24,18 @@ has enough chapters to publish.)*
   chapter's page.
 - **Track B — Build**: one game you build across the whole book, using
   `pgzero`. Chapters 0-7 run anywhere (MyBinder included); Chapter 8 onward
-  needs a real display, so that's when you install Python locally.
+  needs a real display, so that's when you install Python locally. Here's a
+  real, playable slice of it today — a fenced land plot (Ch.9), a labeled
+  storage crate (Ch.1), and a moveable player with a live HUD (Ch.1/3/10),
+  all built from this repo's actual vendored art, not a mockup:
+
+  <p>
+    <img src="web/src/images/screenshots/game-start.png" width="360" alt="pgzero game window: starting scene with a fenced land plot, a storage crate, and the player character on a grass grid, HUD showing Ari, HP 100, position (5, 3).">
+    <img src="web/src/images/screenshots/game-moved.png" width="360" alt="Same pgzero game window after the player moved right and down, HUD showing the updated position (8, 5).">
+  </p>
+
+  Run it yourself: `uv run pgzrun code_project/build_game/game.py`
+  (arrow keys move the player).
 - **The Little Genius Zone**: a no-install coding environment (GitHub
   Codespaces) with optional bonus "unsolved problems" for kids who finish
   early.
