@@ -1,0 +1,91 @@
+---
+title: "Chapter 6: Repeat With For"
+layout: base.njk
+---
+{% from "chapter-band.njk" import render as chapterBand %}
+{{ chapterBand(6, "Repeat With For", "ch06") }}
+
+<p>Repeated addition – <code>4 + 4 + 4</code> – is multiplication; a for loop is Python's way of repeating an action a set number of times without writing it out by hand.</p>
+
+<div class="box box-objectives">
+  <div class="icon-badge"><img src="/images/icons/loop-arrow.png" alt=""></div>
+  <div class="box-title">By the end of this chapter, you can...</div>
+  <div class="box-body">
+    <ul>
+      <li>Write a for loop over a range()</li>
+      <li>Write a for loop over a list</li>
+      <li>Explain what a loop variable is</li>
+    </ul>
+  </div>
+</div>
+
+<h2>6.1 Repeating on purpose</h2>
+<p><code>3 * 4</code> means "add 4, three times." A for loop makes that repetition explicit: <code>for i in range(3): total += 4</code> runs the addition three times. Looping over a list – <code>for item in inventory:</code> – visits every item in order, much shorter than writing one line per item.</p>
+<p><strong>Worked example:</strong> <code>for i in range(5): total += 2</code> runs the loop body five times, once for each value range(5) produces: 0, 1, 2, 3, 4. The loop variable <code>i</code> changes each pass, but since the code never uses <code>i</code>, only <code>total</code>, what matters here is just that the addition happens five times: total goes 0, then 2, 4, 6, 8, 10 – the same as 2 * 5.</p>
+
+<p>Run this chapter's notebook right here on the page, powered by MyBinder.</p>
+
+<button id="binder-btn-ch06_for_loops" class="binder-btn" onclick="
+  this.style.display='none';
+  document.getElementById('binder-loading-ch06_for_loops').style.display='flex';
+  var f = document.getElementById('binder-frame-ch06_for_loops');
+  f.addEventListener('load', function () {
+    document.getElementById('binder-loading-ch06_for_loops').style.display='none';
+    f.style.display='block';
+  });
+  f.src = f.dataset.src;
+">
+  <img src="/images/icons/play.png" alt="">
+  Run this chapter's notebook
+</button>
+
+<div id="binder-loading-ch06_for_loops" class="binder-loading" style="display:none">
+  <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
+  <img class="mascot" src="/images/mascot-waiting.png" alt="">
+  <div>
+    <div class="status-text">Launching your Jupyter session&hellip;</div>
+    <div class="dots"><span></span><span></span><span></span></div>
+  </div>
+</div>
+<div class="binder-frame-wrap">
+  <div class="icon-badge"><img src="/images/icons/play.png" alt=""></div>
+  <iframe id="binder-frame-ch06_for_loops" class="binder-frame" style="display:none" data-src="https://mybinder.org/v2/gh/abderrahim-lectures/build-up-python-for-little-geniuses/master?filepath=notebooks/ch06_for_loops.ipynb"
+    title="Chapter 6 notebook, running live via MyBinder"></iframe>
+</div>
+<p class="binder-note">&#128205; First launch can take 1–5 minutes while MyBinder builds your Python environment.</p>
+
+<div class="box box-code">
+  <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
+  <div class="box-title">for_loops.py</div>
+  <div class="box-body">total = 0
+for i in range(4):
+    total = total + 3
+print(total)
+
+for item in ["sword", "shield", "potion"]:
+    print(item)</div>
+</div>
+
+<div class="box box-knowledgecheck">
+  <div class="icon-badge"><img src="/images/icons/question.png" alt=""></div>
+  <div class="box-title">Check My Knowledge</div>
+  <div class="box-body">
+    <ol>
+      <li>What does range(4) produce?</li>
+      <li>How many times does the loop body run for range(4)?</li>
+      <li>Without running it, predict what repeated_addition(5, 3) returns, then check your prediction.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="box box-retrieval">
+  <div class="icon-badge"><img src="/images/icons/star.png" alt=""></div>
+  <div class="box-title">Retrieval Challenge</div>
+  <div class="box-body">Use append() (Chapter 5) inside a for loop to build a list of the numbers 0-4.</div>
+</div>
+
+<div class="box box-retrieval">
+  <div class="icon-badge"><img src="/images/icons/wrench.png" alt=""></div>
+  <div class="box-title">Track B: Build</div>
+  <div class="box-body">Draw an entire row of ground tiles by looping instead of placing each one by hand.</div>
+</div>
