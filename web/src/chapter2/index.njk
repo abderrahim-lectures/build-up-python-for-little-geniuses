@@ -1,0 +1,88 @@
+---
+title: "Chapter 2: Arithmetic"
+layout: base.njk
+---
+{% from "chapter-band.njk" import render as chapterBand %}
+{{ chapterBand(2, "Arithmetic", "ch02") }}
+
+<p>Order of operations isn't just a math-class rule – Python follows it exactly, so knowing it tells you exactly what your code will compute.</p>
+
+<div class="box box-objectives">
+  <div class="icon-badge"><img src="/images/icons/calculator.png" alt=""></div>
+  <div class="box-title">By the end of this chapter, you can...</div>
+  <div class="box-body">
+    <ul>
+      <li>Use +, -, *, / and // in Python</li>
+      <li>Predict a multi-step expression using order of operations</li>
+      <li>Explain the difference between / and //</li>
+    </ul>
+  </div>
+</div>
+
+<h2>2.1 Order of operations</h2>
+<p>Python evaluates <code>*</code> and <code>/</code> before <code>+</code> and <code>-</code>, exactly like in math class: <code>2 + 3 * 4</code> is <code>14</code>, not <code>20</code>, because multiplication happens first. <code>//</code> is "floor division" – divide, then drop anything after the decimal point, useful when you need a whole number (like splitting players into whole teams).</p>
+<p><strong>Worked example:</strong> Try 24 players splitting into teams of 5, step by step: <code>24 // 5</code> asks "how many whole 5s fit in 24?" – the answer is 4 full teams (4 * 5 = 20). What's left over comes from <code>24 % 5</code>, which is 24 - 20 = 4 leftover players. Together, <code>split_into_teams(24, 5)</code> returns <code>(4, 4)</code>: four full teams of 5, plus 4 players still waiting for a team.</p>
+
+<p>Run this chapter's notebook right here on the page, powered by MyBinder.</p>
+
+<button id="binder-btn-ch02_arithmetic" class="binder-btn" onclick="
+  this.style.display='none';
+  document.getElementById('binder-loading-ch02_arithmetic').style.display='flex';
+  var f = document.getElementById('binder-frame-ch02_arithmetic');
+  f.addEventListener('load', function () {
+    document.getElementById('binder-loading-ch02_arithmetic').style.display='none';
+    f.style.display='block';
+  });
+  f.src = f.dataset.src;
+">
+  <img src="/images/icons/play.png" alt="">
+  Run this chapter's notebook
+</button>
+
+<div id="binder-loading-ch02_arithmetic" class="binder-loading" style="display:none">
+  <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
+  <img class="mascot" src="/images/mascot-waiting.png" alt="">
+  <div>
+    <div class="status-text">Launching your Jupyter session&hellip;</div>
+    <div class="dots"><span></span><span></span><span></span></div>
+  </div>
+</div>
+<div class="binder-frame-wrap">
+  <div class="icon-badge"><img src="/images/icons/play.png" alt=""></div>
+  <iframe id="binder-frame-ch02_arithmetic" class="binder-frame" style="display:none" data-src="https://mybinder.org/v2/gh/abderrahim-lectures/build-up-python-for-little-geniuses/master?filepath=notebooks/ch02_arithmetic.ipynb"
+    title="Chapter 2 notebook, running live via MyBinder"></iframe>
+</div>
+<p class="binder-note">&#128205; First launch can take 1–5 minutes while MyBinder builds your Python environment.</p>
+
+<div class="box box-code">
+  <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
+  <div class="box-title">arithmetic.py</div>
+  <div class="box-body">total_points = 2 + 3 * 4
+teams = 17 // 5
+leftover_players = 17 % 5
+print(total_points, teams, leftover_players)</div>
+</div>
+
+<div class="box box-knowledgecheck">
+  <div class="icon-badge"><img src="/images/icons/question.png" alt=""></div>
+  <div class="box-title">Check My Knowledge</div>
+  <div class="box-body">
+    <ol>
+      <li>Why is 2 + 3 * 4 equal to 14 and not 20?</li>
+      <li>If 17 players split into teams of 5, how many leftover players are there?</li>
+      <li>26 players split into teams of 6 – work out both the whole teams and the leftover by hand, then check your answer against split_into_teams(26, 6).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="box box-retrieval">
+  <div class="icon-badge"><img src="/images/icons/star.png" alt=""></div>
+  <div class="box-title">Retrieval Challenge</div>
+  <div class="box-body">Store the result of <code>17 // 5</code> in a variable (Chapter 1) called <code>teams</code> and print it.</div>
+</div>
+
+<div class="box box-retrieval">
+  <div class="icon-badge"><img src="/images/icons/wrench.png" alt=""></div>
+  <div class="box-title">Track B: Build</div>
+  <div class="box-body">Movement math: turning a direction and a speed number into how far your player moves each frame.</div>
+</div>
