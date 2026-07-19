@@ -1,0 +1,89 @@
+---
+title: "Chapter 7: Repeat Until"
+layout: base.njk
+---
+{% from "chapter-band.njk" import render as chapterBand %}
+{{ chapterBand(7, "Repeat Until", "ch07") }}
+
+<p>A running total that keeps going until you reach a target is exactly what a while loop does: repeat until a condition becomes false.</p>
+
+<div class="box box-objectives">
+  <div class="icon-badge"><img src="/images/icons/hourglass.png" alt=""></div>
+  <div class="box-title">By the end of this chapter, you can...</div>
+  <div class="box-body">
+    <ul>
+      <li>Write a while loop with a running total</li>
+      <li>Explain the risk of an infinite loop</li>
+      <li>Use a while loop to count down</li>
+    </ul>
+  </div>
+</div>
+
+<h2>7.1 Repeating until a condition changes</h2>
+<p>A for loop repeats a fixed number of times; a while loop repeats until a condition stops being true – useful when you don't know the count in advance, like health counting down to 0. Forgetting to change the condition inside the loop causes an infinite loop, so always make sure something inside the loop moves you toward stopping.</p>
+<p><strong>Worked example:</strong> Trace <code>health = 3</code> through the loop: is 3 &gt; 0? Yes – print 3, health becomes 2. Is 2 &gt; 0? Yes – print 2, health becomes 1. Is 1 &gt; 0? Yes – print 1, health becomes 0. Is 0 &gt; 0? No – the loop stops, and "game over" prints. Three numbers printed, matching <code>countdown(3) == [3, 2, 1]</code>.</p>
+
+<p>Run this chapter's notebook right here on the page, powered by MyBinder.</p>
+
+<button id="binder-btn-ch07_while_loops" class="binder-btn" onclick="
+  this.style.display='none';
+  document.getElementById('binder-loading-ch07_while_loops').style.display='flex';
+  var f = document.getElementById('binder-frame-ch07_while_loops');
+  f.addEventListener('load', function () {
+    document.getElementById('binder-loading-ch07_while_loops').style.display='none';
+    f.style.display='block';
+  });
+  f.src = f.dataset.src;
+">
+  <img src="/images/icons/play.png" alt="">
+  Run this chapter's notebook
+</button>
+
+<div id="binder-loading-ch07_while_loops" class="binder-loading" style="display:none">
+  <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
+  <img class="mascot" src="/images/mascot-waiting.png" alt="">
+  <div>
+    <div class="status-text">Launching your Jupyter session&hellip;</div>
+    <div class="dots"><span></span><span></span><span></span></div>
+  </div>
+</div>
+<div class="binder-frame-wrap">
+  <div class="icon-badge"><img src="/images/icons/play.png" alt=""></div>
+  <iframe id="binder-frame-ch07_while_loops" class="binder-frame" style="display:none" data-src="https://mybinder.org/v2/gh/abderrahim-lectures/build-up-python-for-little-geniuses/master?filepath=notebooks/ch07_while_loops.ipynb"
+    title="Chapter 7 notebook, running live via MyBinder"></iframe>
+</div>
+<p class="binder-note">&#128205; First launch can take 1–5 minutes while MyBinder builds your Python environment.</p>
+
+<div class="box box-code">
+  <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
+  <div class="box-title">while_loops.py</div>
+  <div class="box-body">health = 5
+while health > 0:
+    print(health)
+    health = health - 1
+print("game over")</div>
+</div>
+
+<div class="box box-knowledgecheck">
+  <div class="icon-badge"><img src="/images/icons/question.png" alt=""></div>
+  <div class="box-title">Check My Knowledge</div>
+  <div class="box-body">
+    <ol>
+      <li>What could go wrong if you forget to decrease health inside the loop?</li>
+      <li>What's the difference between a for loop and a while loop?</li>
+      <li>If you swapped the order so health = health - 1 happened BEFORE the print, what would the very first number printed be instead of 3?</li>
+    </ol>
+  </div>
+</div>
+
+<div class="box box-retrieval">
+  <div class="icon-badge"><img src="/images/icons/star.png" alt=""></div>
+  <div class="box-title">Retrieval Challenge</div>
+  <div class="box-body">Store each health value (Chapter 1 variables) into a list (Chapter 5) instead of just printing it.</div>
+</div>
+
+<div class="box box-retrieval">
+  <div class="icon-badge"><img src="/images/icons/wrench.png" alt=""></div>
+  <div class="box-title">Track B: Build</div>
+  <div class="box-body">The main game loop itself is a while loop: keep updating and drawing the game until the player quits.</div>
+</div>
