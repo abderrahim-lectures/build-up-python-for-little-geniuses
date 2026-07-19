@@ -1,0 +1,88 @@
+---
+title: "Chapter 11: Dictionaries"
+layout: base.njk
+---
+{% from "chapter-band.njk" import render as chapterBand %}
+{{ chapterBand(11, "Dictionaries", "shop") }}
+
+<p>A lookup table – like a times table where you look up 4 × 7 and get 28 – pairs a key with a value; Python's dict does exactly that.</p>
+
+<div class="box box-objectives">
+  <div class="icon-badge"><img src="/images/icons/key.png" alt=""></div>
+  <div class="box-title">By the end of this chapter, you can...</div>
+  <div class="box-body">
+    <ul>
+      <li>Create a dictionary and look up a value by key</li>
+      <li>Add and update key-value pairs</li>
+      <li>Explain when a dict is better than a list</li>
+    </ul>
+  </div>
+</div>
+
+<h2>11.1 Looking things up by name</h2>
+<p>A list finds things by position (index 0, 1, 2...); a dictionary finds things by name: <code>prices = {"potion": 5, "sword": 20}</code> lets you ask <code>prices["sword"]</code> and get <code>20</code> straight back, no counting needed – exactly how a shop's price list works.</p>
+<p><strong>Worked example:</strong> <code>cart = ["sword", "potion", "potion"]</code> with <code>prices = {"sword": 20, "potion": 5}</code>: total_cost loops through the cart one item at a time – sword looks up to 20, the first potion looks up to 5, the second potion looks up to 5 again – and sums them: 20 + 5 + 5 = 30 coins total, even though "potion" only appears once as a KEY in the dictionary.</p>
+
+<p>Run this chapter's notebook right here on the page, powered by MyBinder.</p>
+
+<button id="binder-btn-ch11_dictionaries" class="binder-btn" onclick="
+  this.style.display='none';
+  document.getElementById('binder-loading-ch11_dictionaries').style.display='flex';
+  var f = document.getElementById('binder-frame-ch11_dictionaries');
+  f.addEventListener('load', function () {
+    document.getElementById('binder-loading-ch11_dictionaries').style.display='none';
+    f.style.display='block';
+  });
+  f.src = f.dataset.src;
+">
+  <img src="/images/icons/play.png" alt="">
+  Run this chapter's notebook
+</button>
+
+<div id="binder-loading-ch11_dictionaries" class="binder-loading" style="display:none">
+  <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
+  <img class="mascot" src="/images/mascot-waiting.png" alt="">
+  <div>
+    <div class="status-text">Launching your Jupyter session&hellip;</div>
+    <div class="dots"><span></span><span></span><span></span></div>
+  </div>
+</div>
+<div class="binder-frame-wrap">
+  <div class="icon-badge"><img src="/images/icons/play.png" alt=""></div>
+  <iframe id="binder-frame-ch11_dictionaries" class="binder-frame" style="display:none" data-src="https://mybinder.org/v2/gh/abderrahim-lectures/build-up-python-for-little-geniuses/master?filepath=notebooks/ch11_dictionaries.ipynb"
+    title="Chapter 11 notebook, running live via MyBinder"></iframe>
+</div>
+<p class="binder-note">&#128205; First launch can take 1–5 minutes while MyBinder builds your Python environment.</p>
+
+<div class="box box-code">
+  <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
+  <div class="box-title">dictionaries.py</div>
+  <div class="box-body">prices = {"potion": 5, "sword": 20, "shield": 15}
+prices["potion"] = 4
+print(prices["sword"])
+print(prices)</div>
+</div>
+
+<div class="box box-knowledgecheck">
+  <div class="icon-badge"><img src="/images/icons/question.png" alt=""></div>
+  <div class="box-title">Check My Knowledge</div>
+  <div class="box-body">
+    <ol>
+      <li>How do you look up the price of "sword" in the prices dictionary?</li>
+      <li>What's one thing a dictionary can do that a list can't?</li>
+      <li>If a shopper's cart is ["shield", "shield"] and shield costs 15, what does total_cost return, and why does it not matter that "shield" is only one key in prices?</li>
+    </ol>
+  </div>
+</div>
+
+<div class="box box-retrieval">
+  <div class="icon-badge"><img src="/images/icons/star.png" alt=""></div>
+  <div class="box-title">Retrieval Challenge</div>
+  <div class="box-body">Use a for loop (Chapter 6) to print every item and price in the shop's dictionary.</div>
+</div>
+
+<div class="box box-retrieval">
+  <div class="icon-badge"><img src="/images/icons/wrench.png" alt=""></div>
+  <div class="box-title">Track B: Build</div>
+  <div class="box-body">Build the shop economy: a real price dictionary the player spends coins against.</div>
+</div>
