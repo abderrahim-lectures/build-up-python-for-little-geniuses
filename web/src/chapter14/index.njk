@@ -1,0 +1,91 @@
+---
+title: "Chapter 14: Debugging"
+layout: base.njk
+---
+{% from "chapter-band.njk" import render as chapterBand %}
+{{ chapterBand(14, "Debugging", "ch14") }}
+
+<p>Checking your work – the same habit from math class – is what debugging and testing are: verifying your code's answer is actually right.</p>
+
+<div class="box box-objectives">
+  <div class="icon-badge"><img src="/images/icons/wrench.png" alt=""></div>
+  <div class="box-title">By the end of this chapter, you can...</div>
+  <div class="box-body">
+    <ul>
+      <li>Read a Python traceback to find where an error happened</li>
+      <li>Write a pytest test that checks a function's answer</li>
+      <li>Fix a bug using print() to inspect a variable's value</li>
+    </ul>
+  </div>
+</div>
+
+<h2>14.1 Checking your work</h2>
+<p>When Python hits an error, it prints a traceback – read it from the bottom up, the last line usually names the actual problem. Adding <code>print(variable)</code> before a suspicious line shows you exactly what's inside it, the same way you'd double check a math answer by re-adding the numbers. A pytest test like <code>assert area(4, 5) == 20</code> checks your function's answer automatically, every time you run it.</p>
+<p><strong>Worked example:</strong> Suppose <code>safe_divide(10, 0)</code> crashed instead of returning None – Python would print a traceback ending in something like <code>ZeroDivisionError: division by zero</code>. Reading bottom-up, that last line tells you exactly what went wrong even before you look at which line caused it. Adding <code>if b == 0: return None</code> catches the problem BEFORE Python ever attempts the division, turning a crash into a safe, testable answer.</p>
+
+<p>Run this chapter's notebook right here on the page, powered by MyBinder.</p>
+
+<button id="binder-btn-ch14_debugging" class="binder-btn" onclick="
+  this.style.display='none';
+  document.getElementById('binder-loading-ch14_debugging').style.display='flex';
+  var f = document.getElementById('binder-frame-ch14_debugging');
+  f.addEventListener('load', function () {
+    document.getElementById('binder-loading-ch14_debugging').style.display='none';
+    f.style.display='block';
+  });
+  f.src = f.dataset.src;
+">
+  <img src="/images/icons/play.png" alt="">
+  Run this chapter's notebook
+</button>
+
+<div id="binder-loading-ch14_debugging" class="binder-loading" style="display:none">
+  <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
+  <img class="mascot" src="/images/mascot-waiting.png" alt="">
+  <div>
+    <div class="status-text">Launching your Jupyter session&hellip;</div>
+    <div class="dots"><span></span><span></span><span></span></div>
+  </div>
+</div>
+<div class="binder-frame-wrap">
+  <div class="icon-badge"><img src="/images/icons/play.png" alt=""></div>
+  <iframe id="binder-frame-ch14_debugging" class="binder-frame" style="display:none" data-src="https://mybinder.org/v2/gh/abderrahim-lectures/build-up-python-for-little-geniuses/master?filepath=notebooks/ch14_debugging.ipynb"
+    title="Chapter 14 notebook, running live via MyBinder"></iframe>
+</div>
+<p class="binder-note">&#128205; First launch can take 1–5 minutes while MyBinder builds your Python environment.</p>
+
+<div class="box box-code">
+  <div class="icon-badge"><img src="/images/icons/gear.png" alt=""></div>
+  <div class="box-title">debugging.py</div>
+  <div class="box-body">def safe_divide(a, b):
+    if b == 0:
+        return None
+    return a / b
+
+print(safe_divide(10, 2))
+print(safe_divide(10, 0))</div>
+</div>
+
+<div class="box box-knowledgecheck">
+  <div class="icon-badge"><img src="/images/icons/question.png" alt=""></div>
+  <div class="box-title">Check My Knowledge</div>
+  <div class="box-body">
+    <ol>
+      <li>Where in a traceback do you usually find the actual error message?</li>
+      <li>What does assert do in a pytest test?</li>
+      <li>Why does test_safe_divide_by_zero_returns_none check `is None` instead of `== None`? (Hint: try both in a notebook cell and see if Python warns you.)</li>
+    </ol>
+  </div>
+</div>
+
+<div class="box box-retrieval">
+  <div class="icon-badge"><img src="/images/icons/star.png" alt=""></div>
+  <div class="box-title">Retrieval Challenge</div>
+  <div class="box-body">Write a pytest-style assert (this chapter) that checks your Chapter 9 area() function gives the right answer.</div>
+</div>
+
+<div class="box box-retrieval">
+  <div class="icon-badge"><img src="/images/icons/wrench.png" alt=""></div>
+  <div class="box-title">Track B: Build</div>
+  <div class="box-body">A full playtest and bugfix pass across everything built so far, backed by real pytest coverage.</div>
+</div>
