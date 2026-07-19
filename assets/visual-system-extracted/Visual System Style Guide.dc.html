@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:#EEF1FA;font-family:'Nunito',sans-serif;color:#212121;
+    background-image:radial-gradient(#21212126 1.6px, transparent 1.6px);
+    background-size:26px 26px;}
+  a{color:#3B5BDB;font-weight:700}
+  a:hover{color:#212121}
+</style>
+</helmet>
+<div style="max-width:1180px;margin:0 auto;padding:56px 32px 100px;display:flex;flex-direction:column;gap:64px">
+
+  <header style="display:flex;flex-direction:column;gap:10px">
+    <div style="display:inline-flex;align-items:center;gap:10px;background:#FFB000;border:3px solid #212121;box-shadow:4px 4px 0 #212121;border-radius:10px;padding:6px 16px;width:fit-content;font-family:'Baloo 2',sans-serif;font-weight:700;font-size:14px;letter-spacing:.03em;text-transform:uppercase">Visual System · Style Guide</div>
+    <h1 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:48px;line-height:1.05;margin:0;color:#212121">Build Up: <span style="color:#4C6EF5">Python for Little Genius</span></h1>
+    <p style="font-family:'Nunito',sans-serif;font-size:17px;font-weight:600;color:#212121;max-width:720px;margin:0;opacity:.75">Chapter banner + badge system, mocked with placeholders for the real Kenney.nl tiles and Canva-generated art. Drop images straight into the slots below — everything else (panels, outlines, shadows, type) is live. Split into separate per-section template files (ChapterBannerTemplate, BadgeIcons, CheckpointGraphics, MascotPoses, BinderTreatment) to keep each file small.</p>
+  </header>
+
+  <section style="display:flex;flex-direction:column;gap:20px">
+    <div style="display:flex;align-items:baseline;gap:12px">
+      <h2 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:26px;margin:0;color:#3B5BDB">01 · Foundations</h2>
+      <div style="height:4px;flex:1;background:#212121;border-radius:2px;opacity:.15"></div>
+    </div>
+    <div style="display:flex;gap:20px;flex-wrap:wrap">
+      <div style="display:flex;flex-direction:column;gap:10px;background:#fff;border:4px solid #212121;box-shadow:6px 6px 0 #212121;border-radius:16px;padding:20px;flex:2;min-width:360px">
+        <div style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:.04em;opacity:.6">Palette</div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:center">
+            <div style="width:64px;height:64px;border-radius:12px;background:#4C6EF5;border:3px solid #212121"></div>
+            <div style="font-size:12px;font-weight:700;text-align:center">Primary Blue<br><span style="opacity:.6;font-weight:600">#4C6EF5</span></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:center">
+            <div style="width:64px;height:64px;border-radius:12px;background:#3B5BDB;border:3px solid #212121"></div>
+            <div style="font-size:12px;font-weight:700;text-align:center">Blue Dark<br><span style="opacity:.6;font-weight:600">#3B5BDB</span></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:center">
+            <div style="width:64px;height:64px;border-radius:12px;background:#FFB000;border:3px solid #212121"></div>
+            <div style="font-size:12px;font-weight:700;text-align:center">Amber<br><span style="opacity:.6;font-weight:600">#FFB000</span></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:center">
+            <div style="width:64px;height:64px;border-radius:12px;background:#C98800;border:3px solid #212121"></div>
+            <div style="font-size:12px;font-weight:700;text-align:center">Amber Dark<br><span style="opacity:.6;font-weight:600">#C98800</span></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:center">
+            <div style="width:64px;height:64px;border-radius:12px;background:#212121;border:3px solid #212121"></div>
+            <div style="font-size:12px;font-weight:700;text-align:center">Outline<br><span style="opacity:.6;font-weight:600">#212121</span></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:center">
+            <div style="width:64px;height:64px;border-radius:12px;background:#EEF1FA;border:3px solid #212121"></div>
+            <div style="font-size:12px;font-weight:700;text-align:center">Background<br><span style="opacity:.6;font-weight:600">#EEF1FA</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;background:#fff;border:4px solid #212121;box-shadow:6px 6px 0 #212121;border-radius:16px;padding:20px;flex:1;min-width:280px">
+        <div style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:.04em;opacity:.6">Type</div>
+        <div style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:30px;color:#212121">Chapter One</div>
+        <div style="font-family:'Nunito',sans-serif;font-weight:400;font-size:16px;line-height:1.5">Body copy sits in Nunito — friendly, readable, never shouty. Baloo 2 stays reserved for headings and badges.</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:20px">
+    <div style="display:flex;align-items:baseline;gap:12px">
+      <h2 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:26px;margin:0;color:#3B5BDB">02 · Panel &amp; Badge Anatomy</h2>
+      <div style="height:4px;flex:1;background:#212121;border-radius:2px;opacity:.15"></div>
+    </div>
+    <div style="position:relative;background:#fff;border:4px solid #212121;box-shadow:6px 6px 0 #212121;border-radius:16px;padding:32px 24px 24px;max-width:420px">
+      <div style="position:absolute;top:-22px;left:-22px;width:56px;height:56px;border-radius:50%;background:#FFB000;border:3px solid #212121;box-shadow:3px 3px 0 #212121;display:flex;align-items:center;justify-content:center;font-family:'Baloo 2',sans-serif;font-weight:800;font-size:22px">★</div>
+      <div style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:20px;margin-bottom:6px">Every panel, same rules</div>
+      <div style="font-size:14px;font-weight:600;opacity:.75;line-height:1.5">3–5px black outline · flat 6px/6px hard shadow (never blurred) · circular badge perched on the top-left corner · dot-grid ground beneath everything.</div>
+    </div>
+  </section>
+
+  <dc-import name="ChapterBannerTemplate" hint-size="100%,700"></dc-import>
+  <dc-import name="BadgeIcons" hint-size="100%,220"></dc-import>
+  <dc-import name="CheckpointGraphics" hint-size="100%,180"></dc-import>
+  <dc-import name="MascotPoses" hint-size="100%,220"></dc-import>
+  <dc-import name="BinderTreatment" hint-size="100%,900"></dc-import>
+
+</div>
+
+</x-dc>
+</body>
+</html>

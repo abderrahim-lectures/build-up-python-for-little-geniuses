@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  @keyframes dotbounce{0%,80%,100%{transform:translateY(0)}40%{transform:translateY(-10px)}}
+</style>
+</helmet>
+<section style="display:flex;flex-direction:column;gap:20px">
+  <div style="display:flex;align-items:baseline;gap:12px">
+    <h2 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:26px;margin:0;color:#3B5BDB">07 · "Run This Notebook" Treatment</h2>
+    <div style="height:4px;flex:1;background:#212121;border-radius:2px;opacity:.15"></div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start">
+    <div style="font-size:13px;font-weight:700;opacity:.6">Trigger button</div>
+    <button style="display:flex;align-items:center;gap:10px;background:#579C4C;border:4px solid #212121;box-shadow:5px 5px 0 #212121;border-radius:12px;padding:12px 22px 12px 14px;font-family:'Baloo 2',sans-serif;font-weight:700;font-size:17px;color:#fff;cursor:pointer">
+      <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="run-button-icon" shape="rounded" radius="8" placeholder="play/rocket icon" src="../kenney/game-icons/PNG/Black/1x/forward.png" style="width:30px;height:30px;flex:none;background:#fff" hint-size="30,30"></x-import>
+      Run This Chapter's Notebook
+    </button>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:10px">
+    <div style="font-size:13px;font-weight:700;opacity:.6">Loading state (shown while MyBinder spins up, up to 5 min)</div>
+    <div style="position:relative;height:280px;border:4px solid #212121;box-shadow:6px 6px 0 #212121;border-radius:16px;overflow:hidden;background:#EEF1FA;background-image:radial-gradient(#21212126 1.6px, transparent 1.6px);background-size:22px 22px;display:flex;align-items:center;justify-content:center;gap:28px">
+      <div style="position:absolute;top:-18px;left:20px;width:48px;height:48px;border-radius:50%;background:#FFB000;border:3px solid #212121;box-shadow:3px 3px 0 #212121;display:flex;align-items:center;justify-content:center;font-size:20px">⚙</div>
+      <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="mascot-waiting" shape="rounded" radius="12" placeholder="Mascot tinkering / waiting" src="./assets/mascot-waiting.png" style="width:140px;height:140px" hint-size="140,140"></x-import>
+      <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start">
+        <div style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:20px">Launching your Jupyter session…</div>
+        <div style="display:flex;gap:8px">
+          <div style="width:14px;height:14px;border-radius:50%;background:#4C6EF5;border:2px solid #212121;animation:dotbounce 1.1s ease-in-out infinite"></div>
+          <div style="width:14px;height:14px;border-radius:50%;background:#4C6EF5;border:2px solid #212121;animation:dotbounce 1.1s ease-in-out .15s infinite"></div>
+          <div style="width:14px;height:14px;border-radius:50%;background:#4C6EF5;border:2px solid #212121;animation:dotbounce 1.1s ease-in-out .3s infinite"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:10px">
+    <div style="font-size:13px;font-weight:700;opacity:.6">Signpost caption (replaces plain italic disclaimer text)</div>
+    <div style="position:relative;display:inline-flex;align-items:center;gap:10px;width:fit-content;background:#FFB000;border:3px solid #212121;box-shadow:4px 4px 0 #212121;border-radius:8px;padding:10px 16px;clip-path:polygon(0 0,100% 0,100% 100%,14px 100%,0 70%)">
+      <span style="font-size:16px">📍</span>
+      <span style="font-family:'Nunito',sans-serif;font-weight:800;font-size:14px">First launch can take 1–5 minutes — the workshop's warming up!</span>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:10px">
+    <div style="font-size:13px;font-weight:700;opacity:.6">Loaded state — the panel frame owns the embedded (unstyleable) Jupyter UI</div>
+    <div style="position:relative;height:220px;border:4px solid #212121;box-shadow:6px 6px 0 #212121;border-radius:16px;overflow:hidden">
+      <div style="position:absolute;top:-18px;left:20px;width:48px;height:48px;border-radius:50%;background:#4C6EF5;border:3px solid #212121;box-shadow:3px 3px 0 #212121;display:flex;align-items:center;justify-content:center;font-size:20px;z-index:2;color:#fff">▶</div>
+      <div style="width:100%;height:100%;background:repeating-linear-gradient(45deg,#dfe3ee,#dfe3ee 12px,#e9ecf6 12px,#e9ecf6 24px);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;opacity:.5">MyBinder / Jupyter iframe (third-party origin, not restylable)</div>
+    </div>
+  </div>
+</section>
+
+</x-dc>
+</body>
+</html>

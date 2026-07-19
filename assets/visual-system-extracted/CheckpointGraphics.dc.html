@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+</helmet>
+<section style="display:flex;flex-direction:column;gap:20px">
+  <div style="display:flex;align-items:baseline;gap:12px">
+    <h2 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:26px;margin:0;color:#3B5BDB">05 · Checkpoint / Waypoint Graphics</h2>
+    <div style="height:4px;flex:1;background:#212121;border-radius:2px;opacity:.15"></div>
+  </div>
+  <div style="display:flex;gap:20px;flex-wrap:wrap">
+    <div style="position:relative;flex:1;min-width:320px;background:#fff;border:4px solid #212121;box-shadow:6px 6px 0 #212121;border-radius:16px;padding:24px 20px 20px;display:flex;gap:16px;align-items:center">
+      <div style="position:absolute;top:-20px;left:-20px;width:52px;height:52px;border-radius:50%;background:#FFB000;border:3px solid #212121;box-shadow:3px 3px 0 #212121;display:flex;align-items:center;justify-content:center;font-size:22px">$</div>
+      <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="checkpoint-shop" shape="rounded" radius="10" placeholder="Shop-front tiles" src="./assets/checkpoint-shop-front.png" style="width:110px;height:110px;flex:none" hint-size="110,110"></x-import>
+      <div style="display:flex;flex-direction:column;gap:4px">
+        <div style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:19px">Shop Economy</div>
+        <div style="font-size:13px;font-weight:600;opacity:.7">Built from shop-front / counter tiles from rpg-urban-pack.</div>
+      </div>
+    </div>
+    <div style="position:relative;flex:1;min-width:320px;background:#fff;border:4px solid #212121;box-shadow:6px 6px 0 #212121;border-radius:16px;padding:24px 20px 20px;display:flex;gap:16px;align-items:center">
+      <div style="position:absolute;top:-20px;left:-20px;width:52px;height:52px;border-radius:50%;background:#4C6EF5;border:3px solid #212121;box-shadow:3px 3px 0 #212121;display:flex;align-items:center;justify-content:center;font-size:22px">✎</div>
+      <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="checkpoint-quest" shape="rounded" radius="10" placeholder="Scroll / ledger tiles" src="./assets/checkpoint-quest-scrolls.png" style="width:110px;height:110px;flex:none" hint-size="110,110"></x-import>
+      <div style="display:flex;flex-direction:column;gap:4px">
+        <div style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:19px">Quest Log</div>
+        <div style="font-size:13px;font-weight:600;opacity:.7">Built from scroll / ledger tiles from rpg-urban-pack.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</x-dc>
+</body>
+</html>
